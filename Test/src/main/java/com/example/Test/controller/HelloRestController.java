@@ -38,5 +38,11 @@ public class HelloRestController {
             return-Hello (firstName) (lastName) from Bridgelabz
             api- http://localhost:8080/post (with custom provided firstName and lastName)
    */
+    @PostMapping("/post")
+    public String sayHelloPost(@RequestBody User user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from Bridgelabz";
+    }
+
+    // curl -X PUT localhost: 8080/hello/put/Lisa/?lastName=Terrisa -w "\n"
 
 }
