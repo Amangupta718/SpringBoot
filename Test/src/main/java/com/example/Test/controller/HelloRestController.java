@@ -44,5 +44,8 @@ public class HelloRestController {
     }
 
     // curl -X PUT localhost: 8080/hello/put/Lisa/?lastName=Terrisa -w "\n"
-
+    @PutMapping("/put/{firstName}")
+    public String sayHello(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
+        return "Hello " + firstName + " " + lastName + "!";
+    }
 }
